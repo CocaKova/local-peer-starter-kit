@@ -31,7 +31,7 @@ The stack is containerized via Docker, ensuring that your host OS remains clean 
 ### Deployment
 1. **Clone the Kit:**
    ```bash
-   git clone https://github.com/your-org/local-peer-starter-kit.git
+   git clone https://github.com/CocaKova/local-peer-starter-kit.git
    cd local-peer-starter-kit
    ```
 
