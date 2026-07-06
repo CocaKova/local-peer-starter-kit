@@ -1,0 +1,12 @@
+# Docker
+.env
+ollama_data/
+webui_data/
+qdrant_storage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
