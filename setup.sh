@@ -3,7 +3,7 @@
 # Local Peer Starter Kit Setup
 # ----------------------------
 # Version: 1.0
-# Purpose: Rapid deployment of a local AI operator stack.
+# Sets up Ollama + Open WebUI + Qdrant via Docker Compose.
 
 set -e
 
@@ -40,8 +40,7 @@ echo -e "\n${BLUE}[3/4] Configuring Environment...${NC}"
 if [ ! -f .env ]; then
     echo -e "Creating .env from .env.example..."
     cp .env.example .env
-    # Sovereignty starts at the front door: generate a strong secret automatically
-    # rather than shipping a guessable default.
+    # Generate a random secret key instead of shipping a guessable default.
     SECRET=$(openssl rand -hex 32 2>/dev/null || head -c 32 /dev/urandom | od -An -tx1 | tr -d ' \n')
     if [ -n "$SECRET" ]; then
         sed -i "s|^WEBUI_SECRET_KEY=.*|WEBUI_SECRET_KEY=${SECRET}|" .env
